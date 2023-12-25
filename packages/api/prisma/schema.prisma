@@ -23,9 +23,9 @@ model Subject {
 }
 
 model StudentGrade {
-  student   Student @relation(fields: [studentId], references: [id])
+  student   Student @relation(fields: [studentId], references: [id], onDelete: Cascade)
   studentId Int
-  subject   Subject @relation(fields: [subjectId], references: [id])
+  subject   Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
   subjectId Int
   grade     Int
 

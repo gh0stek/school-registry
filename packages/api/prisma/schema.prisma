@@ -12,13 +12,13 @@ datasource db {
 
 model Student {
   id     Int            @id @default(autoincrement())
-  name   String
+  name   String         @unique
   grades StudentGrade[]
 }
 
 model Subject {
   id     Int            @id @default(autoincrement())
-  name   String
+  name   String         @unique
   grades StudentGrade[]
 }
 

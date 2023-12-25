@@ -1,0 +1,12 @@
+---
+version: "3.5"
+
+services:
+  db:
+    container_name: mysql_container
+    image: mysql:8.2.0
+    environment:
+      MYSQL_ROOT_PASSWORD: localdb
+    ports:
+      - "3306:3306"
+    restart: always

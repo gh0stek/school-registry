@@ -1,0 +1,27 @@
+# NestJS
+/dist
+/node_modules
+
+# Yarn
+.yarn/*
+!.yarn/cache
+!.yarn/unplugged
+!.yarn/build-state.yml
+.yarnrc.yml
+.yarn/plugins
+.yarn/releases
+.yarn/sdks
+
+# VS Code
+.vscode
+*.code-workspace
+*.code-workspace-wizard
+.idea
+*.iml
+*.ipr
+*.iws
+out
+
+# Operating Systems
+.DS_Store
+Thumbs.db

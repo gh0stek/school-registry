@@ -5,5 +5,5 @@ module.exports = {
     tsconfigRootDir: __dirname,
     sourceType: 'module',
   },
-  root: true
+  root: true,
 }

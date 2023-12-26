@@ -50,14 +50,14 @@ export class AnalyticsService {
       },
     })
 
-    return dbResults.map((subject) => {
-      const grades = subject.grades.map((grade) => grade.grade)
+    return dbResults.map((student) => {
+      const grades = student.grades.map((grade) => grade.grade)
 
       return {
-        subject: subject.name,
-        id: subject.id,
+        subject: student.name,
+        id: student.id,
         average: calculateAverage(grades),
-        grades: subject.grades.map((grade) => ({
+        grades: student.grades.map((grade) => ({
           subject: grade.subject.name,
           grade: grade.grade,
         })),

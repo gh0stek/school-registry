@@ -39,7 +39,7 @@ export class UploadService {
         if (context.index === 0) {
           if (value === '') {
             throw new HttpException(
-              `Value in first column cannot be empty in line ${context.lines}`,
+              `Value in first column cannot be empty. Line ${context.lines}`,
               HttpStatus.UNPROCESSABLE_ENTITY,
             )
           }
@@ -52,7 +52,7 @@ export class UploadService {
         const { error } = schema.validate(value)
         if (error) {
           throw new HttpException(
-            `Invalid value "${value}" in line ${context.lines}. ${error.message}`,
+            `Invalid value "${value}". Line ${context.lines}. ${error.message}`,
             HttpStatus.UNPROCESSABLE_ENTITY,
           )
         }

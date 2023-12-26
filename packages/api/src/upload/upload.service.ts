@@ -84,7 +84,7 @@ export class UploadService {
           where: { name: { in: grades.map(([key]) => key) } },
         })
         // insert subjects to DB if not exists
-        if (subjects.length !== grades.length) {
+        if (subjects.length < grades.length) {
           const newSubjects = grades.filter(
             ([key]) => !subjects.find((subject) => subject.name === key),
           )

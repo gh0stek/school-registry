@@ -8,7 +8,3 @@ export type CSVGrades = {
 export type CSVStudentGrades = CSVGrades & {
   student: string
 }
-
-export function isCSVStudentGrades(value: any): value is CSVStudentGrades {
-  return typeof value.student === 'string'
-}

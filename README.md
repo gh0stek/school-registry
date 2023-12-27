@@ -17,6 +17,12 @@ npm install -g yarn
 # install dependencies
 $ yarn
 
+# migrate database
+$ yarn workspace api prisma migrate dev
+
+# generate prisma client
+$ yarn workspace api prisma generate
+
 # build dtos
 $ yarn workspace dtos build
 
@@ -29,5 +35,5 @@ $ yarn workspace dtos build
 $ yarn workspace api start:dev
 
 # frontend
-$ yarn workspace frontend serve
+$ yarn workspace front serve
 ```

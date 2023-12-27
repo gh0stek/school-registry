@@ -7,7 +7,9 @@ import * as Joi from 'joi'
   imports: [
     ConfigModule.forRoot({
       validationSchema: Joi.object({
-        DATABASE_URL: Joi.string().required(),
+        DATABASE_URL: Joi.string()
+          .optional()
+          .default('mysql://root:localdb@localhost:3306/class_register'),
       }),
     }),
   ],

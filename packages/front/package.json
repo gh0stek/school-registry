@@ -1,0 +1,47 @@
+{
+  "name": "front",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve --open",
+    "dev": "npm run serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "axios": "^1.6.3",
+    "core-js": "^3.8.3",
+    "google-maps": "4.3.3",
+    "highcharts": "^11.2.0",
+    "http-status-codes": "^2.3.0",
+    "vue": "2.7.14",
+    "vue-clickaway": "2.2.2",
+    "vue-github-buttons": "3.1.0",
+    "vue-material": "1.0.0-beta-15",
+    "vue-router": "3.5.2",
+    "vue-social-sharing": "3.0.9"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "@vue/cli-plugin-babel": "5.0.8",
+    "@vue/cli-plugin-eslint": "5.0.8",
+    "@vue/cli-plugin-router": "5.0.8",
+    "@vue/cli-plugin-typescript": "~5.0.0",
+    "@vue/cli-plugin-unit-jest": "~5.0.0",
+    "@vue/cli-service": "5.0.8",
+    "@vue/eslint-config-prettier": "7.0.0",
+    "@vue/eslint-config-typescript": "^9.1.0",
+    "babel-eslint": "10.1.0",
+    "es6-promise": "4.2.8",
+    "eslint": "7.32.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-vue": "7.20.0",
+    "prettier": "2.8.1",
+    "sass": "1.56.1",
+    "sass-loader": "10.2.0",
+    "typescript": "~4.5.5",
+    "vue-template-compiler": "2.7.14"
+  }
+}

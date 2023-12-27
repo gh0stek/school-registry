@@ -17,6 +17,21 @@ async function bootstrap() {
 
   await app.startAllMicroservices()
   app.enableShutdownHooks()
+  const corsDomains: string | string[] = process.env.CORS_DOMAINS
+    ? process.env.CORS_DOMAINS!.split(',')
+    : '*'
+  app.enableCors({
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'DELETE'],
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+    exposedHeaders: [
+      'Content-Type',
+      'ETag',
+      'Content-Length',
+      'Access-Control-Allow-Origin',
+    ],
+    origin: corsDomains,
+  })
   await app.listen(port, () => logger.log(`App listening on the port ${port}`))
 }
 bootstrap()

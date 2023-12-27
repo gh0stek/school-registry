@@ -56,7 +56,7 @@ export class AnalyticsService {
       const grades = student.grades.map((grade) => grade.grade)
 
       return {
-        subject: student.name,
+        student: student.name,
         id: student.id,
         average: calculateAverage(grades),
         grades: student.grades.map((grade) => ({

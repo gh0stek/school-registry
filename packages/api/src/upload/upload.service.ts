@@ -25,6 +25,12 @@ export class UploadService {
     }
   }
 
+  async clearAll() {
+    await this.prisma.studentGrade.deleteMany()
+    await this.prisma.student.deleteMany()
+    await this.prisma.subject.deleteMany()
+  }
+
   private getCSVParser(file: Buffer) {
     const parser = parse(file, {
       trim: true,

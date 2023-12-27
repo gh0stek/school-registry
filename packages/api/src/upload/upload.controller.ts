@@ -5,6 +5,7 @@ import {
   UploadedFile,
   HttpStatus,
   ParseFilePipeBuilder,
+  Delete,
 } from '@nestjs/common'
 import { FileInterceptor } from '@nestjs/platform-express'
 import { UploadService } from './upload.service'
@@ -31,5 +32,10 @@ export class UploadController {
     file: Express.Multer.File,
   ) {
     return this.uploadService.uploadCSV(file.buffer)
+  }
+
+  @Delete('all')
+  clearAll() {
+    return this.uploadService.clearAll()
   }
 }

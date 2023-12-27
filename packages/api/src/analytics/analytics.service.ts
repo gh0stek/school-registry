@@ -20,9 +20,11 @@ export class AnalyticsService {
 
       for (let i = 10; i <= 100; i += 10) {
         distribution[i] = grades.filter(
-          (grade) => grade >= i - 10 && grade < i,
+          (grade) => grade > i - 10 && grade <= i,
         ).length
       }
+
+      distribution[10] += grades.filter((grade) => grade === 0).length
 
       return {
         subject: subject.name,

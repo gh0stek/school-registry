@@ -35,7 +35,7 @@ export default {
             type: 'success',
           })
         })
-        .catch((error) => {
+        .catch(() => {
           this.$notify({
             message: 'An error occurred while deleting all data.',
             icon: 'error',

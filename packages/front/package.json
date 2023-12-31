@@ -9,6 +9,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@babel/eslint-parser": "^7.23.3",
     "axios": "^1.6.3",
     "core-js": "^3.8.3",
     "google-maps": "4.3.3",
@@ -23,8 +24,8 @@
   },
   "devDependencies": {
     "@types/jest": "^27.0.1",
-    "@typescript-eslint/eslint-plugin": "^5.4.0",
-    "@typescript-eslint/parser": "^5.4.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
     "@vue/cli-plugin-babel": "5.0.8",
     "@vue/cli-plugin-eslint": "5.0.8",
     "@vue/cli-plugin-router": "5.0.8",
@@ -33,7 +34,6 @@
     "@vue/cli-service": "5.0.8",
     "@vue/eslint-config-prettier": "7.0.0",
     "@vue/eslint-config-typescript": "^9.1.0",
-    "babel-eslint": "10.1.0",
     "es6-promise": "4.2.8",
     "eslint": "7.32.0",
     "eslint-plugin-prettier": "4.2.1",

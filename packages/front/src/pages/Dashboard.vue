@@ -141,7 +141,7 @@ export default {
         const response = await axios.get(`${this.$apiURL}/analytics/subjects`)
         this.subjectsChartOptions = getSubjectsChartData(response.data)
       } catch (error) {
-        console.log(error)
+        this.notifyError()
       }
     },
     async getStudentsData() {
@@ -149,8 +149,17 @@ export default {
         const response = await axios.get(`${this.$apiURL}/analytics/students`)
         this.studentsChartOptions = getStudentsChartData(response.data)
       } catch (error) {
-        console.log(error)
+        this.notifyError()
       }
+    },
+    notifyError() {
+      this.$notify({
+        message: 'An error occurred. Try again later.',
+        icon: 'error',
+        horizontalAlign: 'center',
+        verticalAlign: 'top',
+        type: 'danger',
+      })
     },
   },
 }

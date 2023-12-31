@@ -1,26 +1,26 @@
-import DashboardLayout from "@/pages/Layout/DashboardLayout.vue";
+import DashboardLayout from '@/pages/Layout/DashboardLayout.vue'
 
-import Dashboard from "@/pages/Dashboard.vue";
-import UploadFile from "@/pages/UploadFile.vue";
+import Dashboard from '@/pages/Dashboard.vue'
+import UploadFile from '@/pages/UploadFile.vue'
 
 const routes = [
   {
-    path: "/",
+    path: '/',
     component: DashboardLayout,
-    redirect: "/dashboard",
+    redirect: '/dashboard',
     children: [
       {
-        path: "dashboard",
-        name: "Dashboard",
+        path: 'dashboard',
+        name: 'Dashboard',
         component: Dashboard,
       },
       {
-        path: "upload",
-        name: "Upload File",
+        path: 'upload',
+        name: 'Upload File',
         component: UploadFile,
       },
     ],
   },
-];
+]
 
-export default routes;
+export default routes

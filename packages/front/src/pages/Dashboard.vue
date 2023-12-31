@@ -31,13 +31,13 @@
 </template>
 
 <script>
-import { ChartCard } from "@/components";
-import axios from "axios";
+import { ChartCard } from '@/components'
+import axios from 'axios'
 
 function getSubjectsChartData(data) {
   const series = [
     {
-      name: "Average",
+      name: 'Average',
       data: data.map((item) => ({
         name: item.subject,
         y: item.average,
@@ -45,29 +45,29 @@ function getSubjectsChartData(data) {
       })),
     },
     {
-      name: "Median",
+      name: 'Median',
       data: data.map((item) => ({
         name: item.subject,
         y: item.median,
         drilldown: item.subject,
       })),
     },
-  ];
+  ]
   const drilldown = {
     series: data.map((item) => ({
       id: item.subject,
       data: Object.entries(item.distribution),
     })),
-  };
+  }
 
   return {
     chart: {
-      type: "column",
+      type: 'column',
       marginTop: 40,
     },
-    title: "",
+    title: '',
     xAxis: {
-      type: "category",
+      type: 'category',
     },
 
     plotOptions: {
@@ -77,35 +77,35 @@ function getSubjectsChartData(data) {
     },
     series,
     drilldown,
-  };
+  }
 }
 
 function getStudentsChartData(data) {
   const series = [
     {
-      name: "Average",
+      name: 'Average',
       data: data.map((item) => ({
         name: item.student,
         y: item.average,
         drilldown: item.student,
       })),
     },
-  ];
+  ]
   const drilldown = {
     series: data.map((item) => ({
       id: item.student,
       data: item.grades.map((grade) => [grade.subject, grade.grade]),
     })),
-  };
+  }
 
   return {
     chart: {
-      type: "column",
+      type: 'column',
       marginTop: 40,
     },
-    title: "",
+    title: '',
     xAxis: {
-      type: "category",
+      type: 'category',
     },
 
     plotOptions: {
@@ -118,7 +118,7 @@ function getStudentsChartData(data) {
     },
     series,
     drilldown,
-  };
+  }
 }
 
 export default {
@@ -129,29 +129,29 @@ export default {
     return {
       subjectsChartOptions: null,
       studentsChartOptions: null,
-    };
+    }
   },
   mounted() {
-    this.getSubjectsData();
-    this.getStudentsData();
+    this.getSubjectsData()
+    this.getStudentsData()
   },
   methods: {
     async getSubjectsData() {
       try {
-        const response = await axios.get(`${this.$apiURL}/analytics/subjects`);
-        this.subjectsChartOptions = getSubjectsChartData(response.data);
+        const response = await axios.get(`${this.$apiURL}/analytics/subjects`)
+        this.subjectsChartOptions = getSubjectsChartData(response.data)
       } catch (error) {
-        console.log(error);
+        console.log(error)
       }
     },
     async getStudentsData() {
       try {
-        const response = await axios.get(`${this.$apiURL}/analytics/students`);
-        this.studentsChartOptions = getStudentsChartData(response.data);
+        const response = await axios.get(`${this.$apiURL}/analytics/students`)
+        this.studentsChartOptions = getStudentsChartData(response.data)
       } catch (error) {
-        console.log(error);
+        console.log(error)
       }
     },
   },
-};
+}
 </script>

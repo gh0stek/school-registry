@@ -31,66 +31,66 @@
   </form>
 </template>
 <script>
-import axios from "axios";
-import { StatusCodes } from "http-status-codes";
+import axios from 'axios'
+import { StatusCodes } from 'http-status-codes'
 
 export default {
-  name: "edit-profile-form",
+  name: 'edit-profile-form',
   props: {
     dataBackgroundColor: {
       type: String,
-      default: "",
+      default: '',
     },
   },
   data() {
     return {
       fileName: null,
       file: null,
-    };
+    }
   },
   methods: {
     submit() {
-      const formData = new FormData();
-      formData.append("file", this.file);
+      const formData = new FormData()
+      formData.append('file', this.file)
       axios
         .post(`${this.$apiURL}/upload/csv`, formData, {
           headers: {
-            "Content-Type": "multipart/form-data",
+            'Content-Type': 'multipart/form-data',
           },
         })
         .then(() => {
           this.$notify({
             message:
-              "File uploaded successfully. You can now view the data in the dashboard.",
-            icon: "add_alert",
-            horizontalAlign: "center",
-            verticalAlign: "top",
-            type: "success",
-          });
+              'File uploaded successfully. You can now view the data in the dashboard.',
+            icon: 'add_alert',
+            horizontalAlign: 'center',
+            verticalAlign: 'top',
+            type: 'success',
+          })
         })
         .catch((error) => {
           if (error.response?.status === StatusCodes.UNPROCESSABLE_ENTITY) {
             this.$notify({
               message: error.response.data.message,
-              icon: "error",
-              horizontalAlign: "center",
-              verticalAlign: "top",
-              type: "danger",
-            });
+              icon: 'error',
+              horizontalAlign: 'center',
+              verticalAlign: 'top',
+              type: 'danger',
+            })
           } else {
             this.$notify({
-              message: "An error occurred while uploading the file.",
-              icon: "error",
-              horizontalAlign: "center",
-              verticalAlign: "top",
-              type: "danger",
-            });
+              message: 'An error occurred while uploading the file.',
+              icon: 'error',
+              horizontalAlign: 'center',
+              verticalAlign: 'top',
+              type: 'danger',
+            })
           }
-        });
+        })
     },
     handleUpload(files) {
-      this.file = files[0];
+      this.file = files[0]
     },
   },
-};
+}
 </script>

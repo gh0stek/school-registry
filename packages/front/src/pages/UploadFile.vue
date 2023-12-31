@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import UploadFileForm from "@/pages/UploadFile/UploadFileForm.vue";
-import axios from "axios";
+import UploadFileForm from '@/pages/UploadFile/UploadFileForm.vue'
+import axios from 'axios'
 
 export default {
   components: {
@@ -28,23 +28,23 @@ export default {
         .then(() => {
           this.$notify({
             message:
-              "Deleted all data successfully. Please upload a new file to continue.",
-            icon: "add_alert",
-            horizontalAlign: "center",
-            verticalAlign: "top",
-            type: "success",
-          });
+              'Deleted all data successfully. Please upload a new file to continue.',
+            icon: 'add_alert',
+            horizontalAlign: 'center',
+            verticalAlign: 'top',
+            type: 'success',
+          })
         })
         .catch((error) => {
           this.$notify({
-            message: "An error occurred while deleting all data.",
-            icon: "error",
-            horizontalAlign: "center",
-            verticalAlign: "top",
-            type: "danger",
-          });
-        });
+            message: 'An error occurred while deleting all data.',
+            icon: 'error',
+            horizontalAlign: 'center',
+            verticalAlign: 'top',
+            type: 'danger',
+          })
+        })
     },
   },
-};
+}
 </script>

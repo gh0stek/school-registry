@@ -38,46 +38,46 @@ export default {
     return {
       isOpen: false,
       sidebarColors: [
-        { color: "purple", active: false },
-        { color: "blue", active: false },
-        { color: "green", active: true },
-        { color: "orange", active: false },
-        { color: "red", active: false },
+        { color: 'purple', active: false },
+        { color: 'blue', active: false },
+        { color: 'green', active: true },
+        { color: 'orange', active: false },
+        { color: 'red', active: false },
       ],
       sidebarImages: [
-        { image: require("@/assets/img/sidebar-1.jpg"), active: false },
-        { image: require("@/assets/img/sidebar-2.jpg"), active: true },
-        { image: require("@/assets/img/sidebar-3.jpg"), active: false },
-        { image: require("@/assets/img/sidebar-4.jpg"), active: false },
+        { image: require('@/assets/img/sidebar-1.jpg'), active: false },
+        { image: require('@/assets/img/sidebar-2.jpg'), active: true },
+        { image: require('@/assets/img/sidebar-3.jpg'), active: false },
+        { image: require('@/assets/img/sidebar-4.jpg'), active: false },
       ],
-    };
+    }
   },
   methods: {
     toggleDropDown() {
-      this.isOpen = !this.isOpen;
+      this.isOpen = !this.isOpen
     },
     closeDropDown() {
-      this.isOpen = false;
+      this.isOpen = false
     },
     toggleList(list, itemToActivate) {
       list.forEach((listItem) => {
-        listItem.active = false;
-      });
-      itemToActivate.active = true;
+        listItem.active = false
+      })
+      itemToActivate.active = true
     },
     updateValue(name, val) {
-      this.$emit(`update:${name}`, val);
+      this.$emit(`update:${name}`, val)
     },
     changeSidebarBackground(item) {
-      this.$emit("update:color", item.color);
-      this.toggleList(this.sidebarColors, item);
+      this.$emit('update:color', item.color)
+      this.toggleList(this.sidebarColors, item)
     },
     changeSidebarImage(item) {
-      this.$emit("update:image", item.image);
-      this.toggleList(this.sidebarImages, item);
+      this.$emit('update:image', item.image)
+      this.toggleList(this.sidebarImages, item)
     },
   },
-};
+}
 </script>
 <style>
 .centered-row {

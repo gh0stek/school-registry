@@ -10,27 +10,27 @@
   </md-card>
 </template>
 <script>
-import * as Highcharts from "highcharts";
-import HighchartsDrilldown from "highcharts/modules/drilldown";
+import * as Highcharts from 'highcharts'
+import HighchartsDrilldown from 'highcharts/modules/drilldown'
 
-HighchartsDrilldown(Highcharts);
+HighchartsDrilldown(Highcharts)
 
 export default {
-  name: "chart-card",
+  name: 'chart-card',
   props: {
     chartOptions: {
       type: Object,
     },
     dataBackgroundColor: {
       type: String,
-      default: "",
+      default: '',
     },
   },
   data() {
     return {
-      chartId: "no-id",
+      chartId: 'no-id',
       chartInstance: null,
-    };
+    }
   },
   methods: {
     /***
@@ -38,36 +38,36 @@ export default {
      */
     initChart() {
       if (!this.chartOptions) {
-        return;
+        return
       }
-      const chartIdQuery = `${this.chartId}`;
-      this.chartInstance = Highcharts.chart(chartIdQuery, this.chartOptions);
+      const chartIdQuery = `${this.chartId}`
+      this.chartInstance = Highcharts.chart(chartIdQuery, this.chartOptions)
     },
     /***
      * Assigns a random id to the chart
      */
     updateChartId() {
-      const currentTime = new Date().getTime().toString();
-      const randomInt = this.getRandomInt(0, currentTime);
-      this.chartId = `div_${randomInt}`;
+      const currentTime = new Date().getTime().toString()
+      const randomInt = this.getRandomInt(0, currentTime)
+      this.chartId = `div_${randomInt}`
     },
     getRandomInt(min, max) {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
+      return Math.floor(Math.random() * (max - min + 1)) + min
     },
   },
   mounted() {
-    this.updateChartId();
+    this.updateChartId()
     this.$nextTick(() => {
-      this.initChart();
-    });
+      this.initChart()
+    })
   },
   watch: {
     chartOptions: {
       handler() {
-        this.initChart();
+        this.initChart()
       },
       deep: true,
     },
   },
-};
+}
 </script>

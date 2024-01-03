@@ -26,9 +26,11 @@ export class UploadService {
   }
 
   async clearAll() {
-    await this.prisma.studentGrade.deleteMany()
-    await this.prisma.student.deleteMany()
-    await this.prisma.subject.deleteMany()
+    await this.prisma.$transaction(async (transaction) => {
+      await transaction.studentGrade.deleteMany()
+      await transaction.student.deleteMany()
+      await transaction.subject.deleteMany()
+    })
   }
 
   private getCSVParser(file: Buffer) {

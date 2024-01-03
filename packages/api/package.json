@@ -13,7 +13,7 @@
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
-    "pretest": "dotenv -e .env.test prisma migrate reset",
+    "xpretest": "dotenv -e .env.test prisma migrate reset",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
